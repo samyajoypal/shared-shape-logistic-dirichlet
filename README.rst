@@ -11,8 +11,9 @@ Repository: https://github.com/samyajoypal/shared-shape-logistic-dirichlet
 
 The repository supports two distinct tasks:
 
-* Regenerate the eight main numerical result tables from the supplied,
-  hash-checked summaries. This is quick and does not fit models.
+* Regenerate the two focused numerical result tables and the expanded
+  comparisons from supplied, hash-checked summaries. This is quick and does
+  not fit models.
 * Rerun the statistical studies from data and recorded simulation seeds.
   These runs perform the original optimization and bootstrap calculations.
 
@@ -36,14 +37,22 @@ Run::
 
     .venv/bin/python scripts/reproduce_saved_tables.py --output artifacts/saved_tables
 
-The command verifies the input hashes, writes eight main-table CSV files,
-three complete supplementary result CSV files, and a reproduction manifest.
+The command verifies the input hashes, writes twelve CSV files and a
+reproduction manifest. These include the two focused displays, the extended
+comparison tables, and complete interval, conditional-risk and sensitivity
+summaries.
 Choose a new output directory to run it again. It never overwrites an
 existing output directory or selects new model fits.
 
-The main outputs are:
+The focused outputs are:
 
 * ``table_01_core_simulations.csv``: shared-shape simulation settings.
+* ``focused_table_02_applications.csv``: six-acid olive oil and Abalone,
+  with shared/separate LD parameter counts, all four conditional-mean
+  prediction losses, and the shared/separate bootstrap variance ratio.
+
+The expanded comparison outputs retain their stable file names:
+
 * ``table_02_original_density.csv``: original-application density prediction.
 * ``table_03_original_mean_prediction.csv``: original-application prediction loss.
 * ``table_04_geographic_transfer.csv``: geographic transfer comparisons.
@@ -52,6 +61,13 @@ The main outputs are:
 * ``table_07_additional_mean_and_stability.csv``: additional-application loss,
   parameter counts and resampling variation.
 * ``table_08_additional_density.csv``: additional-application density contrasts.
+
+The two application rows use the same observation-weighted loss and
+conditional-mean stability definitions. The olive-oil row uses the refined
+fits; the Abalone row uses its recorded primary fitting procedure. The
+Gaussian control and log-linear regression remain visible alongside both LD
+models. The configuration and summary hashes used for these displays are
+included in the reproduction manifest.
 
 These are numerical tables, with more diagnostic columns and precision than
 the printed displays. ``saved_summaries/`` retains the broader comparisons,
@@ -95,6 +111,11 @@ output directories under ``results/``. Task ranges are half-open: ``0:10``
 runs indices 0 through 9. Independent task indices may run on separate
 workers after the design is frozen; aggregation reports every planned task,
 including unavailable or failed fits.
+
+The full recorded designs include applications beyond the two focused
+illustrations. Their configurations, summaries and reproduction commands
+remain available as expanded comparisons; the focused table does not remove
+or replace those results.
 
 Code and interpretation
 -----------------------

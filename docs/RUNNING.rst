@@ -7,6 +7,15 @@ directory from another configuration. Large task ranges below describe the
 complete study and can take substantial computing time. Each runner's
 ``--help`` describes its individual-task interface.
 
+For the two focused numerical displays and all expanded comparison tables,
+no new fits are needed::
+
+    .venv/bin/python scripts/reproduce_saved_tables.py --output artifacts/saved_tables
+
+The focused application display uses six-acid olive oil and Abalone. The
+complete application designs below also retain the other recorded
+comparisons. Their task ranges and scientific settings are unchanged.
+
 Primary simulations and Gaussian companion
 -------------------------------------------
 
@@ -94,7 +103,8 @@ Saved results versus fresh runs
 ------------------------------
 
 ``scripts/reproduce_saved_tables.py`` reads the supplied summaries and
-reproduces the published numerical displays without new fitting. The
+reproduces the focused numerical displays and expanded comparisons without
+new fitting. The
 commands above instead create new fits and reports. Numerical optimization
 can vary with platform and library versions; retained attempts, convergence
 flags and source/configuration hashes make such differences inspectable.

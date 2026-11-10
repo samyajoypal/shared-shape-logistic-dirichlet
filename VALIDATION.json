@@ -1,16 +1,19 @@
 {
-  "scope": "Independent checks of the standalone public release; no full statistical studies were rerun for this packaging audit.",
+  "scope": "Independent checks of the standalone public release and its focused table export; no full statistical studies were rerun for this reporting revision.",
   "isolated_tests": {
     "passed": 356,
     "skipped": 26,
-    "reason_for_skips": "Optional downloaded-data or completed-run integration inputs are absent from the minimal release."
+    "reason_for_skips": "Optional downloaded-data or completed-run integration inputs are absent from the minimal release.",
+    "scope": "Numerical and workflow baseline check; the focused reporting changes were checked separately by the seven public-table tests."
   },
   "additional_public_table_tests": {
-    "passed": 3,
+    "passed": 7,
     "checks": [
-      "all eight main numerical table scopes",
-      "modified configuration rejection",
-      "modified scientific summary rejection"
+      "all eight extended numerical table scopes retained",
+      "focused two-application display retains all four predictors",
+      "modified original and additional application configuration rejection",
+      "modified scientific summary rejection",
+      "incomplete bootstrap pair rejection for both focused applications"
     ]
   },
   "isolated_import_sweep": {
@@ -25,9 +28,17 @@
     "note": "Short-budget package DMM nonconvergence is retained; finite density is the smoke criterion."
   },
   "saved_summary_reproduction": {
-    "csv_outputs": 11,
-    "main_table_rows_independently_compared": 46,
-    "printed_numeric_cells_independently_compared": 171,
+    "csv_outputs": 12,
+    "focused_display_files": [
+      "table_01_core_simulations.csv",
+      "focused_table_02_applications.csv"
+    ],
+    "focused_application_rows_compared": 2,
+    "focused_application_printed_numeric_cells_compared": 12,
+    "focused_application_numerical_mismatches": 0,
+    "extended_table_rows_independently_compared": 46,
+    "extended_printed_numeric_cells_independently_compared": 171,
+    "existing_csv_outputs_byte_unchanged": 11,
     "numerical_mismatches": 0,
     "new_fits": false
   },

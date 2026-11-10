@@ -24,13 +24,13 @@
     },
     {
       "file": "README.rst",
-      "bytes": 5814,
-      "sha256": "d22457d1901409e1d4b35e0ff192cf6aa278e0f90da4b8c24836e4a66c3f4021"
+      "bytes": 6855,
+      "sha256": "0d87e2fc3264ff47f1749cab9df726cfc8b4dd4e0da784dad197030d4309cfae"
     },
     {
       "file": "VALIDATION.json",
-      "bytes": 1424,
-      "sha256": "978c21db34e4464be5baa05ee6b14a4eb8a55c193bf61cd1a96f9dfe8de7ab4a"
+      "bytes": 2127,
+      "sha256": "a6bb4c1f716289bee208a59c0efcf27fc27ef3051285ccb60350e438efcc11a5"
     },
     {
       "file": "configs/experiments.json",
@@ -139,8 +139,8 @@
     },
     {
       "file": "docs/RUNNING.rst",
-      "bytes": 7563,
-      "sha256": "e3c46e3cb16c6d0c007d377a1147a4c2b4049f13476cc39b53ee24907ad8c671"
+      "bytes": 7985,
+      "sha256": "2da15873af884f1747af22778d0cca8da773fed645723036972fc7fe204cec60"
     },
     {
       "file": "docs/public_analysis_receipt.json",
@@ -544,8 +544,8 @@
     },
     {
       "file": "scripts/reproduce_saved_tables.py",
-      "bytes": 6310,
-      "sha256": "4a253c1efba17a7925fff79acd9f8cfd9208deebcc26b33a0d42efc87bbd5501"
+      "bytes": 8200,
+      "sha256": "0f306ce05a09dcfee0d82f2be4d4dc135068f8cb934901a331abd941eba98851"
     },
     {
       "file": "scripts/run_confirmatory_experiments.py",
@@ -684,8 +684,8 @@
     },
     {
       "file": "tests/test_public_reproduction.py",
-      "bytes": 1806,
-      "sha256": "9c1337218da830399f5ca9288a3255d9736c94199ac7222b34931eac23fe3a1f"
+      "bytes": 5026,
+      "sha256": "56d5cabe9f02a0e8966b4d22610743310e1ad7bce6a8418006816b5078db787e"
     },
     {
       "file": "tests/test_regularized_skew_normal.py",

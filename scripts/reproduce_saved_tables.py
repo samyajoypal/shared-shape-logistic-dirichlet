@@ -12,6 +12,7 @@ import pandas as pd
 ROOT=Path(__file__).resolve().parents[1]
 CORE=['shared_ld','full_ld','gaussian_shared_correlation']
 METHODS=CORE+['conditional_log_linear']
+CONFIG_INPUTS={'configs/phase2_applications.json','configs/phase3_applications.json'}
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def read(name):return pd.read_csv(ROOT/'saved_summaries'/name)
 def one(frame,**keys):
@@ -25,7 +26,7 @@ def build(output):
     output=Path(output);output.mkdir(parents=True,exist_ok=False)
     entries=json.loads((ROOT/'export_manifest.json').read_text())['entries'];used={}
     for e in entries:
-        if e['file'].startswith('saved_summaries/') or e['file']=='configs/phase3_applications.json':
+        if e['file'].startswith('saved_summaries/') or e['file'] in CONFIG_INPUTS:
             if sha(ROOT/e['file'])!=e['export_sha256']:raise ValueError('Changed summary: '+e['file'])
             used[e['file']]=e['export_sha256']
     t={};core=read('simulations/primary_common_shape_core.csv')
@@ -66,12 +67,36 @@ def build(output):
     t['table_07_additional_mean_and_stability']=pd.DataFrame(rows)
     d=read('additional_density/all_planned_paired_comparisons.csv')
     t['table_08_additional_density']=d[d.comparison.eq('primary')&d.weighting.eq('observation')&((d.density.eq('joint')&d.comparator.eq('full_ld'))|(d.density.eq('conditional')&d.comparator.isin(['full_ld','gaussian_shared_correlation','fmvmm_t','conditional_log_linear'])))]
+    # Focused application display; the complete comparison views above remain unchanged.
+    oil_spec=next(s for s in json.loads((ROOT/'configs/phase2_applications.json').read_text())['variants'] if s['id']=='olive6_oleic')
+    dimension=len(oil_spec['columns'])-1;k=oil_spec['k']
+    oil={'dataset_id':'olive6_oleic','label':'Six-acid olive oil',
+         'parameters_shared':k-1+2*k*dimension+dimension+1,
+         'parameters_separate':k-1+2*k*dimension+k*(dimension+1)}
+    for method in METHODS:
+        entry=one(t['table_03_original_mean_prediction'],dataset_id='olive6_oleic',method=method)
+        if entry.planned_repetitions!=10 or entry.complete_repetitions!=10 or entry.k!=k:
+            raise ValueError('Incomplete or inconsistent focused olive-oil repetitions')
+        oil[method+'_mean_prediction_loss']=entry.loss
+    pair=one(t['table_06_original_stability'],variant='olive6_oleic',left_method='shared_ld',right_method='full_ld',subset='all_finite')
+    if pair.bootstrap_requested!=199 or pair.both_available!=199:
+        raise ValueError('Incomplete focused olive-oil bootstrap pairs')
+    oil['variance_ratio']=pair.variance_ratio
+    abalone=one(t['table_07_additional_mean_and_stability'],dataset_id='abalone_log4')
+    if abalone.bootstrap_requested!=199 or abalone.both_available!=199:
+        raise ValueError('Incomplete focused Abalone bootstrap pairs')
+    abalone={key:abalone[key] for key in oil if key!='label'}
+    abalone['label']='Abalone'
+    t['focused_table_02_applications']=pd.DataFrame([oil,abalone],columns=list(oil))
     outputs={}
     for name,frame in t.items():
         path=output/(name+'.csv');frame.to_csv(path,index=False);outputs[path.name]=sha(path)
     for name,rel in [('all_interval_results','intervals/inference_coverage_derived.csv'),('all_conditional_risks','conditional_risk/all_cell_paired_risks.csv'),('all_additional_sensitivities','additional_density/matched_sensitivity_changes.csv')]:
         path=output/(name+'.csv');path.write_bytes((ROOT/'saved_summaries'/rel).read_bytes());outputs[path.name]=sha(path)
-    plan={'input_sha256':used,'output_sha256':outputs,'source_sha256':sha(__file__),'new_fits':False,'data_downloads':False,'summary_reproduction_only':True}
+    plan={'input_sha256':used,'output_sha256':outputs,'source_sha256':sha(__file__),
+          'focused_display_files':['table_01_core_simulations.csv','focused_table_02_applications.csv'],
+          'extended_comparison_files':[name+'.csv' for name in t if name not in {'table_01_core_simulations','focused_table_02_applications'}],
+          'new_fits':False,'data_downloads':False,'summary_reproduction_only':True}
     (output/'reproduction_manifest.json').write_text(json.dumps(plan,indent=2)+'\n');return plan
 
 def main():
