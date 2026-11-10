@@ -1,0 +1,170 @@
+{
+  "datasets": {
+    "faithful": {
+      "analysis_cautions": [
+        "Continuous densities approximate rounded time measurements.",
+        "These are successive geyser measurements; a random split is a descriptive density benchmark, not a validated forecasting design. Check dependence before claiming independent-sample inference.",
+        "Do not invent external true cluster labels."
+      ],
+      "analysis_table": "data/faithful.csv",
+      "analysis_table_sha256": "1ff203302d35362a0e3d45fb994d8b8f8050f029a011951b719fa7f1951a3411",
+      "citation": "R Core Team, datasets package, faithful; source credited to W. Hardle. Hardle (1991), Smoothing Techniques: With Implementation in S.",
+      "connector_url": "https://api.github.com/repos/wch/r-source/contents/src/library/datasets/data/faithful.R?ref=trunk",
+      "documentation_cautions": [
+        "Eruption durations are heavily rounded, with many multiples of five seconds. Preserve the released values.",
+        "Different published versions of the geyser data exist; this is R datasets::faithful with 272 rows."
+      ],
+      "documentation_url": "https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/faithful.html",
+      "download_url": "https://raw.githubusercontent.com/wch/r-source/trunk/src/library/datasets/data/faithful.R",
+      "features": [
+        {
+          "description": "Eruption duration",
+          "name": "eruptions",
+          "unit": "minutes"
+        },
+        {
+          "description": "Waiting time to the next eruption",
+          "name": "waiting",
+          "unit": "minutes"
+        }
+      ],
+      "integrity": {
+        "duplicate_feature_rows_after_first": 16,
+        "feature_count": 2,
+        "maximum_by_feature": {
+          "eruptions": 5.1,
+          "waiting": 96.0
+        },
+        "minimum_by_feature": {
+          "eruptions": 1.6,
+          "waiting": 43.0
+        },
+        "missing_feature_cells": 0,
+        "negative_feature_cells": 0,
+        "nonfinite_feature_cells": 0,
+        "rows": 272,
+        "zero_feature_cells": 0
+      },
+      "labels": null,
+      "license_note": "R source repository reports GPL-2.0; the faithful manual does not state a separate dataset-specific license.",
+      "original_file": "data/faithful_original.R",
+      "original_git_blob_sha1": "0b16f074abbb52db30ec0a43e98c5f330be23ffb",
+      "original_sha256": "3cdac44bca411deabae2904557fce2272e87c83128087d1927a5384fb8c99e4f",
+      "source_type": "R source, obtained through the read-only wch/r-source mirror of https://svn.r-project.org/R/",
+      "table_conversion": "Parsed the two numeric vectors from R source without executing R; preserved row order and literal precision.",
+      "title": "Old Faithful Geyser Data"
+    },
+    "seeds": {
+      "analysis_table": "data/seeds.csv",
+      "analysis_table_sha256": "26014c95d5c874214dea2c0336257bf2da88af55b8ceaea9e383273bc43be8e4",
+      "citation": "Charytanowicz, M., Niewczas, J., Kulczycki, P., Kowalski, P., and Lukasik, S. (2010). Seeds [Dataset]. UCI Machine Learning Repository. DOI: 10.24432/C5H30K.",
+      "collection": "Geometric measurements from soft X-ray images of kernels from experimental wheat fields in Lublin, Poland; 70 randomly selected kernels per variety.",
+      "documentation_url": "https://archive.ics.uci.edu/dataset/236/seeds",
+      "doi": "https://doi.org/10.24432/C5H30K",
+      "download_url": "https://archive.ics.uci.edu/static/public/236/seeds.zip",
+      "features": [
+        {
+          "name": "area",
+          "unit": "not specified in UCI metadata"
+        },
+        {
+          "name": "perimeter",
+          "unit": "not specified in UCI metadata"
+        },
+        {
+          "name": "compactness",
+          "unit": "dimensionless by its formula"
+        },
+        {
+          "name": "kernel_length",
+          "unit": "not specified in UCI metadata"
+        },
+        {
+          "name": "kernel_width",
+          "unit": "not specified in UCI metadata"
+        },
+        {
+          "name": "asymmetry_coefficient",
+          "unit": "not specified in UCI metadata"
+        },
+        {
+          "name": "kernel_groove_length",
+          "unit": "not specified in UCI metadata"
+        }
+      ],
+      "integrity": {
+        "duplicate_feature_rows_after_first": 0,
+        "feature_count": 7,
+        "maximum_by_feature": {
+          "area": 21.18,
+          "asymmetry_coefficient": 8.456,
+          "compactness": 0.9183,
+          "kernel_groove_length": 6.55,
+          "kernel_length": 6.675,
+          "kernel_width": 4.033,
+          "perimeter": 17.25
+        },
+        "minimum_by_feature": {
+          "area": 10.59,
+          "asymmetry_coefficient": 0.7651,
+          "compactness": 0.8081,
+          "kernel_groove_length": 4.519,
+          "kernel_length": 4.899,
+          "kernel_width": 2.63,
+          "perimeter": 12.41
+        },
+        "missing_feature_cells": 0,
+        "negative_feature_cells": 0,
+        "nonfinite_feature_cells": 0,
+        "rows": 210,
+        "zero_feature_cells": 0
+      },
+      "labels": {
+        "code_to_name_mapping": "Not explicitly stated in the consulted UCI page; do not infer names solely from ordering.",
+        "meaning": "Wheat variety code",
+        "name": "class",
+        "values_and_counts": {
+          "1": 70,
+          "2": 70,
+          "3": 70
+        },
+        "varieties_listed_by_source": [
+          "Kama",
+          "Rosa",
+          "Canadian"
+        ]
+      },
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "metadata_based_feature_choice": {
+        "max_absolute_compactness_formula_discrepancy_in_released_data": 0.0010199686358989268,
+        "reason": "The source defines compactness = 4*pi*area/perimeter^2, so the seven-coordinate vector contains a derived feature and is approximately confined to a lower-dimensional surface after measurement rounding.",
+        "recommendation": "For a continuous-density benchmark, omit compactness a priori, leaving six measurement features. Keep all original fields in the raw file and CSV.",
+        "recommended_features": [
+          "area",
+          "perimeter",
+          "kernel_length",
+          "kernel_width",
+          "asymmetry_coefficient",
+          "kernel_groove_length"
+        ]
+      },
+      "original_archive": "data/seeds_uci_original.zip",
+      "original_archive_sha256": "5033bd71b24592fa70d9b3cc5be02332dc6d03d0b27e6655e6d553f39afab323",
+      "original_file": "data/seeds_dataset.txt",
+      "original_sha256": "1f3f83c0d8485ae9148061389d19628607e3f5660e3d6f40ec9102fb398bb12f",
+      "table_conversion": "Split arbitrary whitespace into eight fields, add names, retain every numerical literal and row. Using a single tab delimiter would misparse some rows.",
+      "title": "Seeds"
+    }
+  },
+  "evaluation_requirements": [
+    "Split observations before fitting any scaling, rotation, feature selection, or other learned preprocessing.",
+    "Use the same held-out observations and training-only preprocessing for every method.",
+    "Return log densities to a common coordinate system with the proper Jacobian.",
+    "Keep Seeds class labels out of fitting, initialization, and model selection; use them only for external evaluation if labels are treated as unavailable.",
+    "These small benchmarks are illustrations; neither alone establishes a substantive new scientific application."
+  ],
+  "processing": "Only format conversion and integrity checks. Original numerical literals and row order retained. No imputation, filtering, jitter, standardization, log transform, or fitted preprocessing.",
+  "retrieved_date": "2026-11-06",
+  "selection_basis": "Chosen before fitting: a small bivariate benchmark and a wheat morphology benchmark with observed variety labels. No outcome-driven selection."
+}

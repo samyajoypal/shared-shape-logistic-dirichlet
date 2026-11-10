@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "title": "Phase 2 Gaussian control with a shared positive one-factor correlation",
+  "status": "Declared structural control before inspection of phase-2 production outcomes; separate from earlier exploratory studies",
+  "simulation_scope": "Every task in the frozen primary simulation manifest, regardless of any fitted outcome",
+  "application_scope": "Every primary-variant, primary-bounds CV, full-data and bootstrap task in the frozen application manifest",
+  "method": "gaussian_shared_correlation",
+  "fit_policy": "Use the main task's saved training standardization, partition prefix and optimizer settings. Preserve an exact diagonal candidate and run all declared nonzero-correlation starts. Selection uses training likelihood only.",
+  "diagonal_policy": "Reuse the upstream finite diagonal Gaussian parameter point. If unavailable or not fitted upstream, fit it with the same training partitions and settings. Preserve every dependency attempt and count its cost. The control fitter also retains a feasible partition-based zero-correlation candidate when needed; this is not called a diagonal MLE.",
+  "bounds": {
+    "means": [-20.0, 20.0],
+    "standard_deviations": [0.005, 10.0],
+    "correlation_residual_epsilon": 0.000001,
+    "d2_rho_lower": 0.0,
+    "d_ge_3_loading_lower": 0.0
+  },
+  "inherit_optimizer_settings": ["n_starts", "maxiter", "refinement_maxiter", "gtol", "ftol", "start_timeout_seconds"],
+  "parameter_count": "k-1+2*k*d+1 when d=2; k-1+2*k*d+d when d>=3",
+  "evaluation": "Identical evaluation coordinates and Jacobians to the paired main task; original real coordinates for simulation, selected ALR for olive oil, original millimetres for crabs",
+  "uncertainty": "Paired Monte Carlo standard errors across independent simulation replicates; descriptive mean and range across complete application CV repetitions; bootstrap profiles describe conditional resampling stability, not established confidence coverage",
+  "failure_policy": "No failed case is removed or replaced. Unfinished upstream tasks remain dependency-pending. Preserve finite fitted parameters before evaluation, all start records, failures, source/input hashes and explicit availability denominators.",
+  "threads": 1
+}

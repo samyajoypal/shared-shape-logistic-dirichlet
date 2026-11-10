@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "study": "phase2_shared_shape_interval_comparison",
+  "status": "Diagnostic-driven coverage study; methods and settings fixed before the new simulation results",
+  "master_seed": 2026111701,
+  "replications_per_cell": 500,
+  "sample_sizes": [100, 250, 1000],
+  "scenarios": [
+    {"name": "separated", "separation_multiplier": 1.0},
+    {"name": "overlap", "separation_multiplier": 0.45},
+    {"name": "severe_overlap", "separation_multiplier": 0.35}
+  ],
+  "generating_model": {
+    "dimension": 2,
+    "components": 2,
+    "alpha": [0.8, 2.4, 1.4],
+    "base_component_means": [[-2.0, -1.2], [2.0, 1.2]],
+    "component_scales": [[0.65, 0.55], [0.9, 0.7]],
+    "weights": [0.55, 0.45]
+  },
+  "fit": {
+    "n_starts": 3,
+    "maxiter": 3000,
+    "continuation_maxiter": 2000,
+    "gtol": 0.000001,
+    "ftol": 1e-14,
+    "maxls": 40,
+    "alpha_bounds": [0.15, 60.0],
+    "inverse_scale_bounds": [0.15, 8.0],
+    "scaled_location_bounds": [-40.0, 40.0],
+    "bootstrap_parent_warm_start": true
+  },
+  "intervals": {
+    "confidence": 0.95,
+    "methods": ["wald", "bootstrap_percentile", "bootstrap_basic", "bootstrap_t"],
+    "targets": ["alpha_1", "lower_mean_weight", "mean_contrast_0"],
+    "bootstrap_draws": 399,
+    "minimum_valid_fraction": 0.95,
+    "minimum_valid_draws": 200,
+    "minimum_weight": 0.00001,
+    "maximum_information_condition": 1e12,
+    "quantile_method": "linear",
+    "working_coordinates": ["log", "logit", "identity"],
+    "bootstrap_percentile_basic_include_boundary_fits": true,
+    "wald_and_bootstrap_t_require_interior_information": true
+  },
+  "label_rule": "Order component means by coordinate 0, then coordinate 1 for an exact tie. Targets are observable ordered-mixture functionals; truth never chooses labels for fitting or intervals.",
+  "failure_rule": "Retain all attempts and starts. Do not redraw failed bootstrap samples. Report each method's valid count, boundary count, exclusions, availability, conditional coverage, and covered-and-available fraction.",
+  "bootstrap_warning": "Intervals computed from successful bootstrap fits approximate a conditional numerical distribution when any draws fail. Full-draw availability is reported separately. No coverage improvement is assumed.",
+  "threads": 1
+}

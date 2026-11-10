@@ -1,0 +1,26 @@
+# Generated experiments and downloaded data are deliberately not published.
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+results/
+artifacts/
+*.log
+*.tex
+*.pdf
+*.aux
+*.out
+*.toc
+.DS_Store
+data/oliveoil.csv
+data/oliveoil_original.rda
+data/crabs.csv
+data/crabs_original.rda
+data/faithful.csv
+data/faithful_original.R
+data/provenance.json
+data/extended_applications/hydrochem_cations*.csv
+data/extended_applications/gemas_major6*.csv
+data/extended_applications/preparation_manifest.json
+data/extended_applications/raw/Hydrochem.*
+data/extended_applications/raw/gemas.*

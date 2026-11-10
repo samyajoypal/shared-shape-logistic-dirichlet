@@ -1,0 +1,328 @@
+{
+  "title": "Phase 2 scientific applications: olive-oil chemistry and crab morphology",
+  "date": "2026-11-07",
+  "seed": 2026110719,
+  "folds": 5,
+  "bootstrap_repetitions": 199,
+  "methods": [
+    "shared_ld",
+    "full_ld",
+    "gaussian_full",
+    "gaussian_diag",
+    "fmvmm_t",
+    "fmvmm_dmm",
+    "base_ld",
+    "bounded_skew_normal"
+  ],
+  "bootstrap_methods": [
+    "shared_ld",
+    "full_ld",
+    "gaussian_full"
+  ],
+  "fitting": {
+    "n_starts": 5,
+    "shape_levels": [
+      0.5,
+      1,
+      2.5,
+      5,
+      10
+    ],
+    "alpha_bounds": [
+      0.05,
+      100.0
+    ],
+    "inverse_scale_bounds": [
+      0.05,
+      20.0
+    ],
+    "scaled_location_bounds": [
+      -60.0,
+      60.0
+    ],
+    "maxiter": 4000,
+    "refinement_maxiter": 3000,
+    "package_maxiter": 2000,
+    "start_timeout_seconds": 120,
+    "ftol": 1e-15,
+    "gtol": 1e-06
+  },
+  "wide_bounds": {
+    "alpha_bounds": [
+      0.01,
+      1000.0
+    ],
+    "inverse_scale_bounds": [
+      0.01,
+      50.0
+    ],
+    "scaled_location_bounds": [
+      -120.0,
+      120.0
+    ]
+  },
+  "variants": [
+    {
+      "id": "olive3_oleic",
+      "dataset": "oliveoil",
+      "columns": [
+        "palmitic",
+        "linoleic",
+        "oleic"
+      ],
+      "reference": "oleic",
+      "k": 3,
+      "repeats": 10,
+      "primary": true,
+      "conditional_target": "linoleic/oleic"
+    },
+    {
+      "id": "olive6_oleic",
+      "dataset": "oliveoil",
+      "columns": [
+        "palmitic",
+        "palmitoleic",
+        "stearic",
+        "linoleic",
+        "eicosenoic",
+        "oleic"
+      ],
+      "reference": "oleic",
+      "k": 3,
+      "repeats": 10,
+      "primary": true,
+      "conditional_target": "linoleic/oleic"
+    },
+    {
+      "id": "crabs_log5",
+      "dataset": "crabs",
+      "columns": [
+        "FL",
+        "RW",
+        "CL",
+        "CW",
+        "BD"
+      ],
+      "transform": "log",
+      "k": 4,
+      "repeats": 10,
+      "primary": true,
+      "conditional_target": "BD"
+    },
+    {
+      "id": "olive3_palmitic",
+      "dataset": "oliveoil",
+      "columns": [
+        "palmitic",
+        "linoleic",
+        "oleic"
+      ],
+      "reference": "palmitic",
+      "k": 3,
+      "repeats": 2,
+      "primary": false,
+      "conditional_target": "linoleic/palmitic"
+    },
+    {
+      "id": "olive3_linoleic",
+      "dataset": "oliveoil",
+      "columns": [
+        "palmitic",
+        "linoleic",
+        "oleic"
+      ],
+      "reference": "linoleic",
+      "k": 3,
+      "repeats": 2,
+      "primary": false,
+      "conditional_target": "palmitic/linoleic"
+    },
+    {
+      "id": "olive6_palmitic",
+      "dataset": "oliveoil",
+      "columns": [
+        "palmitic",
+        "palmitoleic",
+        "stearic",
+        "linoleic",
+        "eicosenoic",
+        "oleic"
+      ],
+      "reference": "palmitic",
+      "k": 3,
+      "repeats": 2,
+      "primary": false,
+      "conditional_target": "linoleic/palmitic"
+    },
+    {
+      "id": "olive8_add0.5",
+      "dataset": "oliveoil",
+      "columns": [
+        "palmitic",
+        "palmitoleic",
+        "stearic",
+        "linoleic",
+        "linolenic",
+        "arachidic",
+        "eicosenoic",
+        "oleic"
+      ],
+      "reference": "oleic",
+      "k": 3,
+      "repeats": 2,
+      "primary": false,
+      "conditional_target": "linoleic/oleic",
+      "add_to_all": 0.5
+    },
+    {
+      "id": "olive8_add1.0",
+      "dataset": "oliveoil",
+      "columns": [
+        "palmitic",
+        "palmitoleic",
+        "stearic",
+        "linoleic",
+        "linolenic",
+        "arachidic",
+        "eicosenoic",
+        "oleic"
+      ],
+      "reference": "oleic",
+      "k": 3,
+      "repeats": 2,
+      "primary": false,
+      "conditional_target": "linoleic/oleic",
+      "add_to_all": 1.0
+    },
+    {
+      "id": "crabs_raw5",
+      "dataset": "crabs",
+      "columns": [
+        "FL",
+        "RW",
+        "CL",
+        "CW",
+        "BD"
+      ],
+      "transform": "raw",
+      "k": 4,
+      "repeats": 2,
+      "primary": false,
+      "conditional_target": "BD"
+    },
+    {
+      "id": "olive3_oleic_k2",
+      "dataset": "oliveoil",
+      "columns": [
+        "palmitic",
+        "linoleic",
+        "oleic"
+      ],
+      "reference": "oleic",
+      "k": 2,
+      "repeats": 2,
+      "primary": false,
+      "conditional_target": "linoleic/oleic"
+    },
+    {
+      "id": "olive3_oleic_k4",
+      "dataset": "oliveoil",
+      "columns": [
+        "palmitic",
+        "linoleic",
+        "oleic"
+      ],
+      "reference": "oleic",
+      "k": 4,
+      "repeats": 2,
+      "primary": false,
+      "conditional_target": "linoleic/oleic"
+    },
+    {
+      "id": "olive3_oleic_k5",
+      "dataset": "oliveoil",
+      "columns": [
+        "palmitic",
+        "linoleic",
+        "oleic"
+      ],
+      "reference": "oleic",
+      "k": 5,
+      "repeats": 2,
+      "primary": false,
+      "conditional_target": "linoleic/oleic"
+    },
+    {
+      "id": "crabs_log5_k2",
+      "dataset": "crabs",
+      "columns": [
+        "FL",
+        "RW",
+        "CL",
+        "CW",
+        "BD"
+      ],
+      "transform": "log",
+      "k": 2,
+      "repeats": 2,
+      "primary": false,
+      "conditional_target": "BD"
+    },
+    {
+      "id": "crabs_log5_k3",
+      "dataset": "crabs",
+      "columns": [
+        "FL",
+        "RW",
+        "CL",
+        "CW",
+        "BD"
+      ],
+      "transform": "log",
+      "k": 3,
+      "repeats": 2,
+      "primary": false,
+      "conditional_target": "BD"
+    },
+    {
+      "id": "crabs_log5_k5",
+      "dataset": "crabs",
+      "columns": [
+        "FL",
+        "RW",
+        "CL",
+        "CW",
+        "BD"
+      ],
+      "transform": "log",
+      "k": 5,
+      "repeats": 2,
+      "primary": false,
+      "conditional_target": "BD"
+    }
+  ],
+  "primary_questions": [
+    "Do shared shapes provide a useful and stable description of chemical or biological profiles?",
+    "Does shape sharing improve held-out joint density and conditional prediction?",
+    "Do locations and scales change while standardized skewness and correlation remain similar?"
+  ],
+  "interpretation_rules": [
+    "All outcomes and variants are reported. No dataset, coordinate reference, component count or bound is selected using held-out performance.",
+    "Three-acid and six-acid analyses have different sample spaces; their absolute log scores are not compared.",
+    "The six-acid subcomposition retains exactly the six acids with strictly positive recorded measurements. The two acids containing instrument-limit zeros are included only in explicitly named eight-acid addition sensitivities. No post-fit variable selection.",
+    "Olive folds are unstratified random folds. Leave-one-collection-area-out is a separate transport assessment using geographic metadata to define blocks, never to fit.",
+    "Crab labels describe a balanced collection; fitted weights are sample fractions, not natural population prevalence.",
+    "Crab geometric contrasts CW/FL, CW/BD and CL/RW follow the original study. Conditional BD prediction asks how well remaining dimensions predict body depth.",
+    "The label-stratified nonparametric bootstrap preserves recorded sampling-group sizes. Its intervals measure conditional resampling stability; they are not asserted to have nominal coverage in weakly separated mixtures.",
+    "Full-sample fits and bootstrap samples are descriptive; their test-array values are not held-out evidence.",
+    "Shape sharing imposes a common standardized marginal distribution and common correlation matrix across latent components. It is a testable modelling restriction, not a biological mechanism.",
+    "Primary application methods share five partitions. Bounds and nonstationary fits are always flagged. Package skew is replaced by the previously verified bounded comparator."
+  ],
+  "sources": {
+    "crabs_original": "https://doi.org/10.1071/ZO9740417",
+    "crabs_documentation": "https://stat.ethz.ch/R-manual/R-devel/library/MASS/html/crabs.html",
+    "olive_documentation": "https://search.r-project.org/CRAN/refmans/pdfCluster/html/oliveoil.html",
+    "olive_original": "Forina, Armanino, Lanteri and Tiscornia (1983), Classification of Olive Oils from their Fatty Acid Composition, pp189-214",
+    "olive_scientific_context": "https://doi.org/10.5650/jos.ess15270"
+  }
+}

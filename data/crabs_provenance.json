@@ -1,0 +1,22 @@
+{
+  "conversion": "rdata.read_rda; no R code executed; original values retained",
+  "csv_sha256": "c112a5e147591d8e04f32dbf3f3e2be2eb74860119c6f6b5e33191ef84ee16aa",
+  "design": "50 observations in each of four colour-form by sex groups. Mixture weights are sample fractions, not estimates of population prevalence.",
+  "documentation_url": "https://stat.ethz.ch/R-manual/R-devel/library/MASS/html/crabs.html",
+  "doi": "10.1071/ZO9740417",
+  "download_date": "2026-11-07",
+  "label_policy": "Colour form and sex are external interpretation variables; never used in density fitting or initialization. Group-stratified bootstrap is a separately declared sampling-design sensitivity.",
+  "labels_note": "Use colour-form terminology consistently; no new taxonomic claim.",
+  "measurement_columns": [
+    "FL",
+    "RW",
+    "CL",
+    "CW",
+    "BD"
+  ],
+  "n": 200,
+  "original_study": "Campbell and Mahon (1974), Australian Journal of Zoology 22, 417-425",
+  "source_sha256": "deb6b7b2a844e60c867741a6fc11478d45e7052e9d2c3c79de59a8d1966c5e52",
+  "source_url": "https://raw.githubusercontent.com/cran/MASS/master/data/crabs.rda",
+  "units": "millimetres"
+}

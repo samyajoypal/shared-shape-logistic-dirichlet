@@ -1,0 +1,9 @@
+[project]
+name = "shared-shape-logistic-dirichlet"
+version = "0.1.0"
+description = "Numerical reproduction of shared-shape logistic-Dirichlet mixture studies"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+pythonpath = ["scripts", "tests"]
+testpaths = ["tests"]

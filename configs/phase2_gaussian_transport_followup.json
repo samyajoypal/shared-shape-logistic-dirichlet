@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "title": "Post-result shared-correlation Gaussian control for both olive-oil geographic transport analyses",
+  "status": "Follow-up declared on2026-11-09 after seeing original aggregate results; tests a missing structural comparator, without tuning a model or selecting favorable areas",
+  "simulation_scope": "None",
+  "application_scope": "All18 original primary-bounds leave-collection-area-out tasks: nine areas for each of olive3_oleic and olive6_oleic",
+  "method": "gaussian_shared_correlation",
+  "fit_policy": "Unchanged original Gaussian structural-control fitting settings and bounds, inherited primary five starts. All18 folds included without outcome selection.",
+  "diagonal_policy": "Reuse the upstream finite diagonal Gaussian parameter point. If unavailable or not fitted upstream, fit it with the same training partitions and settings. Preserve every dependency attempt and count its cost. The control fitter also retains a feasible partition-based zero-correlation candidate when needed; this is not called a diagonal MLE.",
+  "bounds": {
+    "means": [
+      -20.0,
+      20.0
+    ],
+    "standard_deviations": [
+      0.005,
+      10.0
+    ],
+    "correlation_residual_epsilon": 1e-06,
+    "d2_rho_lower": 0.0,
+    "d_ge_3_loading_lower": 0.0
+  },
+  "inherit_optimizer_settings": [
+    "n_starts",
+    "maxiter",
+    "refinement_maxiter",
+    "gtol",
+    "ftol",
+    "start_timeout_seconds"
+  ],
+  "parameter_count": "k-1+2*k*d+1 when d=2; k-1+2*k*d+d when d>=3",
+  "evaluation": "Original ALR coordinates for each representation, exact conditional density from Gaussian marginals; same saved training rows, transforms and partitions",
+  "uncertainty": "Row-weighted and equal-area descriptive contrasts, all individual areas and failures; no independent-area sampling inference",
+  "failure_policy": "No failed case is removed or replaced. Unfinished upstream tasks remain dependency-pending. Preserve finite fitted parameters before evaluation, all start records, failures, source/input hashes and explicit availability denominators.",
+  "threads": 1
+}

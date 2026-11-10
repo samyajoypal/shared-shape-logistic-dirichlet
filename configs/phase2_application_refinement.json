@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "title": "Uniform training-only numerical refinement of saved application fits",
+  "date": "2026-11-09",
+  "status": "Post-result numerical validation; no new data, seeds, fitted families or test-score selection",
+  "primary_variants": [
+    "olive3_oleic",
+    "olive6_oleic",
+    "crabs_log5"
+  ],
+  "methods": [
+    "shared_ld",
+    "full_ld",
+    "gaussian_shared_correlation"
+  ],
+  "prediction_scope": "Every primary CV/full/area-out task, plus every existing wide-bound CV task for LD only",
+  "bootstrap_scope": "All199 existing bootstrap tasks for each primary variant, with the identical policy; launch after prediction-scope validation",
+  "expected_tasks": {
+    "prediction": 186,
+    "bootstrap": 597
+  },
+  "expected_fits": {
+    "prediction": 543,
+    "bootstrap": 1791
+  },
+  "policy": {
+    "original_gtol": 1e-06,
+    "transformed_gtol": 1e-12,
+    "transformed_maxiter": 3000,
+    "newton_maxiter": 60,
+    "raw_maxiter": 2000,
+    "ftol": 1e-15,
+    "maxls": 80,
+    "maxcor": 30,
+    "start_timeout_seconds": 120.0,
+    "hessian_relative_step": 6.055454452393343e-06,
+    "hessian_floor_fraction": 1e-07,
+    "maximum_transformed_step": 2.0,
+    "line_search_steps": 35,
+    "training_likelihood_tie_tolerance": 1e-12
+  },
+  "bounds_policy": "Use each task\u2019s original primary or existing wide LD box exactly; Gaussian bounds remain exactly the frozen control bounds",
+  "initialization": "Every distinct finite saved retained/optimizer endpoint, including failed optimizer endpoints; no new random seeds or partitions",
+  "nested_policy": "Retain and refine the newly fitted common-shape point embedded in full LD; count dependency and verify nested training likelihood",
+  "selection": "Highest finite training likelihood; within1e-12 choose lower original-coordinate projected gradient, then larger training likelihood, then earlier candidate",
+  "evaluation": "Only after checkpointing selected parameters; original ALR or original crab millimetres, with exact conditional marginal/Jacobian",
+  "threads": 1
+}

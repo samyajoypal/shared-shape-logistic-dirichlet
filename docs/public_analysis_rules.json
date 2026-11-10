@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "artifact_role": "public_reproduction_rules",
+  "historical_preregistration_receipt": false,
+  "mean_prediction_loss": "Average held-out squared error of the conditional mean on the original log or log-ratio scale; no exponentiation or Jacobian enters squared loss.",
+  "scope": "Every declared primary and sensitivity fold, with all planned methods and missingness retained; original and refined procedures separate.",
+  "group_weights": "Observation-weighted and equal-original-group means; no fitting reweighting.",
+  "stability": "All 199 whole-group or row bootstrap slots and original covariate grid; paired Monte Carlo intervals only.",
+  "simulation_risk": "All 24 fixed-heterogeneity LD core cells and six local-alternative cells; target zero; all 5000 test covariates; exact generating conditional mean.",
+  "note": "These are publication reproduction rules. They do not recreate or claim an original before-inspection registration."
+}

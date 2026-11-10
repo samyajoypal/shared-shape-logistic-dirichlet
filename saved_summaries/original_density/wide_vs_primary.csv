@@ -1,0 +1,25 @@
+variant,method,version,repeat,measure,wide_score,primary_score_same_repetition,wide_minus_primary,interpretation
+crabs_log5,full_ld,original,0,joint,-6.891498235762672,-7.252742831501658,0.36124459573898626,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+crabs_log5,full_ld,original,0,conditional,-0.4602363912713387,-0.4600229676116087,-0.00021342365972998323,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+crabs_log5,full_ld,refined,0,joint,-6.735443570512607,-7.249865997056179,0.5144224265435717,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+crabs_log5,full_ld,refined,0,conditional,-0.4409131797800358,-0.45332574819083943,0.012412568410803626,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+crabs_log5,shared_ld,original,0,joint,-6.866011763154172,-7.123917842270414,0.25790607911624175,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+crabs_log5,shared_ld,original,0,conditional,-0.45294848388996584,-0.4177629336108506,-0.03518555027911524,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+crabs_log5,shared_ld,refined,0,joint,-6.7072604644605756,-7.123917842270414,0.41665737780983836,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+crabs_log5,shared_ld,refined,0,conditional,-0.45259486188051457,-0.4177629336108506,-0.03483192826966397,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+olive3_oleic,full_ld,original,0,joint,0.603651460383866,0.6010759743525766,0.00257548603128932,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+olive3_oleic,full_ld,original,0,conditional,0.29740443435297154,0.29471468319477173,0.0026897511581998046,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+olive3_oleic,full_ld,refined,0,joint,0.6061055272713974,0.6011260484666193,0.004979478804778115,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+olive3_oleic,full_ld,refined,0,conditional,0.29993555229655305,0.2947349369947442,0.005200615301808875,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+olive3_oleic,shared_ld,original,0,joint,0.5468550208597283,0.5468152189506833,3.9801909044956396e-05,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+olive3_oleic,shared_ld,original,0,conditional,0.2501330192605007,0.2499843954035944,0.00014862385690628255,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+olive3_oleic,shared_ld,refined,0,joint,0.5468550208597283,0.5468152189506833,3.9801909044956396e-05,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+olive3_oleic,shared_ld,refined,0,conditional,0.2501330192605007,0.2499843954035944,0.00014862385690628255,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+olive6_oleic,full_ld,original,0,joint,0.6681468870488366,0.656509611829105,0.011637275219731569,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+olive6_oleic,full_ld,original,0,conditional,0.3544086654773157,0.35508715765297993,-0.0006784921756642359,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+olive6_oleic,full_ld,refined,0,joint,0.6370980784106237,0.7000147129470696,-0.06291663453644591,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+olive6_oleic,full_ld,refined,0,conditional,0.3789467369587695,0.3657543599228436,0.013192377035925906,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+olive6_oleic,shared_ld,original,0,joint,0.5537644378235484,0.5534129935102323,0.00035144431331612935,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+olive6_oleic,shared_ld,original,0,conditional,0.3573032520088486,0.3585031971834029,-0.0011999451745542955,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+olive6_oleic,shared_ld,refined,0,joint,0.5450622995791403,0.5531471911201138,-0.008084891540973471,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions
+olive6_oleic,shared_ld,refined,0,conditional,0.3556750124316557,0.3584152543603237,-0.0027402419286679525,Existing wider-bound sensitivity on matched splits; no averaging against ten primary repetitions

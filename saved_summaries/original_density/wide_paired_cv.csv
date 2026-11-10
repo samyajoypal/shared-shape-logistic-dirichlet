@@ -1,0 +1,13 @@
+variant,bounds,version,comparator,measure,complete_pairs,shared_minus_other,repeat_min,repeat_max,positive_repetitions,uncertainty
+crabs_log5,wide,original,full_ld,joint,1,0.02548647260849979,0.02548647260849979,0.02548647260849979,1,Descriptive range across overlapping repeated CV splits
+crabs_log5,wide,original,full_ld,conditional,1,0.00728790738137286,0.00728790738137286,0.00728790738137286,1,Descriptive range across overlapping repeated CV splits
+crabs_log5,wide,refined,full_ld,joint,1,0.028183106052031448,0.028183106052031448,0.028183106052031448,1,Descriptive range across overlapping repeated CV splits
+crabs_log5,wide,refined,full_ld,conditional,1,-0.011681682100478763,-0.011681682100478763,-0.011681682100478763,0,Descriptive range across overlapping repeated CV splits
+olive3_oleic,wide,original,full_ld,joint,1,-0.05679643952413771,-0.05679643952413771,-0.05679643952413771,0,Descriptive range across overlapping repeated CV splits
+olive3_oleic,wide,original,full_ld,conditional,1,-0.04727141509247085,-0.04727141509247085,-0.04727141509247085,0,Descriptive range across overlapping repeated CV splits
+olive3_oleic,wide,refined,full_ld,joint,1,-0.05925050641166918,-0.05925050641166918,-0.05925050641166918,0,Descriptive range across overlapping repeated CV splits
+olive3_oleic,wide,refined,full_ld,conditional,1,-0.049802533036052365,-0.049802533036052365,-0.049802533036052365,0,Descriptive range across overlapping repeated CV splits
+olive6_oleic,wide,original,full_ld,joint,1,-0.11438244922528817,-0.11438244922528817,-0.11438244922528817,0,Descriptive range across overlapping repeated CV splits
+olive6_oleic,wide,original,full_ld,conditional,1,0.0028945865315329056,0.0028945865315329056,0.0028945865315329056,1,Descriptive range across overlapping repeated CV splits
+olive6_oleic,wide,refined,full_ld,joint,1,-0.0920357788314834,-0.0920357788314834,-0.0920357788314834,0,Descriptive range across overlapping repeated CV splits
+olive6_oleic,wide,refined,full_ld,conditional,1,-0.02327172452711379,-0.02327172452711379,-0.02327172452711379,0,Descriptive range across overlapping repeated CV splits

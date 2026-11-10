@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "title": "Phase 3: fixed additional scientific applications after mixed original results",
+  "date": "2026-11-09",
+  "seed": 2026110927,
+  "post_result_exploratory_panel": true,
+  "folds": 5,
+  "repeats": 10,
+  "bootstrap_repetitions": 199,
+  "threads": 1,
+  "group_split_rule": "Seeded random order of unique groups; assign each whole group to the currently smallest row-count fold, with seeded random tie breaking",
+  "group_bootstrap_rule": "Draw G observed groups with replacement, retain every row of each selected group with multiplicity; G is the original number of groups",
+  "fitting": {
+    "n_starts": 5,
+    "shape_levels": [
+      0.5,
+      1,
+      2.5,
+      5,
+      10
+    ],
+    "alpha_bounds": [
+      0.05,
+      100.0
+    ],
+    "inverse_scale_bounds": [
+      0.05,
+      20.0
+    ],
+    "scaled_location_bounds": [
+      -60.0,
+      60.0
+    ],
+    "maxiter": 4000,
+    "refinement_maxiter": 3000,
+    "package_maxiter": 2000,
+    "start_timeout_seconds": 120,
+    "ftol": 1e-15,
+    "gtol": 1e-06
+  },
+  "wide_bounds": {
+    "alpha_bounds": [
+      0.01,
+      1000.0
+    ],
+    "inverse_scale_bounds": [
+      0.01,
+      50.0
+    ],
+    "scaled_location_bounds": [
+      -120.0,
+      120.0
+    ]
+  },
+  "refinement_policy": {
+    "original_gtol": 1e-06,
+    "transformed_gtol": 1e-12,
+    "transformed_maxiter": 3000,
+    "newton_maxiter": 60,
+    "raw_maxiter": 2000,
+    "ftol": 1e-15,
+    "maxls": 80,
+    "maxcor": 30,
+    "start_timeout_seconds": 120.0,
+    "hessian_relative_step": 6.055454452393343e-06,
+    "hessian_floor_fraction": 1e-07,
+    "maximum_transformed_step": 2.0,
+    "line_search_steps": 35,
+    "training_likelihood_tie_tolerance": 1e-12
+  },
+  "bootstrap_methods": [
+    "shared_ld",
+    "full_ld",
+    "gaussian_shared_correlation"
+  ],
+  "sensitivity_methods": [
+    "shared_ld",
+    "full_ld",
+    "gaussian_shared_correlation"
+  ],
+  "sensitivities": {
+    "wide_bounds_repeats": [
+      0
+    ],
+    "wide_bounds_methods": [
+      "shared_ld",
+      "full_ld"
+    ],
+    "component_count_offsets": [
+      -1,
+      1
+    ],
+    "component_count_repeats": [
+      0
+    ]
+  },
+  "conditional_baseline": {
+    "method": "conditional_log_linear",
+    "enabled": true,
+    "primary_tasks_only": true,
+    "standardized_residual_sd_floor": 0.0001,
+    "fitting": "SVD least squares with intercept and all non-target standardized coordinates; residual SD is sqrt(RSS/n)",
+    "joint_density": false,
+    "clustering": false,
+    "stability": true
+  },
+  "stability": {
+    "repetitions": 199,
+    "grid": "All original observed covariate rows; prediction ignores the target column",
+    "primary_grid_weights": "Equal observation weight 1/N",
+    "group_weight_sensitivity": "Equal original group weight 1/(G*n_g); aggregation only, no likelihood reweighting",
+    "measures": [
+      "integrated_bootstrap_variance",
+      "squared_shift_from_full",
+      "mean_squared_deviation_from_full"
+    ],
+    "comparisons": "Paired same bootstrap indices; all finite and common score-eligible subsets; retain active bounds",
+    "monte_carlo_uncertainty": "Paired delete-one-bootstrap jackknife; no independent-row or population-efficiency confidence claim"
+  },
+  "data_metadata": "data/extended_applications/preparation_manifest.json",
+  "datasets": [
+    {
+      "id": "hydrochem_cations",
+      "csv": "data/extended_applications/hydrochem_cations.csv",
+      "columns": [
+        "Na",
+        "K",
+        "Mg",
+        "Ca"
+      ],
+      "transform": "alr",
+      "reference": "Ca",
+      "conditional_target": "Na/Ca",
+      "k": 4,
+      "methods": [
+        "shared_ld",
+        "full_ld",
+        "gaussian_shared_correlation",
+        "gaussian_full",
+        "gaussian_diag",
+        "fmvmm_t",
+        "bounded_skew_normal",
+        "fmvmm_dmm",
+        "base_ld"
+      ],
+      "expected_rows": 485,
+      "expected_groups": 30,
+      "group_role": "Repeated monitoring site",
+      "label_role": "Recorded river; descriptive external metadata only",
+      "scientific_target": "Relative sodium enrichment in river-water cation mass composition",
+      "score_measure": "Declared additive log-ratio coordinates",
+      "units": "As-recorded cation mass ratios; no assertion of per-column molar concentration units"
+    },
+    {
+      "id": "gemas_major6",
+      "csv": "data/extended_applications/gemas_major6.csv",
+      "columns": [
+        "Ca",
+        "Fe",
+        "K",
+        "Mg",
+        "Si",
+        "Al"
+      ],
+      "transform": "alr",
+      "reference": "Al",
+      "conditional_target": "Ca/Al",
+      "k": 3,
+      "methods": [
+        "shared_ld",
+        "full_ld",
+        "gaussian_shared_correlation",
+        "gaussian_full",
+        "gaussian_diag",
+        "fmvmm_t",
+        "bounded_skew_normal",
+        "fmvmm_dmm",
+        "base_ld"
+      ],
+      "expected_rows": 2108,
+      "expected_groups": 33,
+      "group_role": "Country code used as geographic block",
+      "label_role": "Recorded soilclass, with blanks retained; not assumed three true classes",
+      "scientific_target": "Relative calcium enrichment conditional on other major-element ratios in soil",
+      "score_measure": "Declared additive log-ratio coordinates",
+      "units": "Ratios of selected elemental XRF concentrations in mg/kg"
+    },
+    {
+      "id": "abalone_log4",
+      "csv": "data/extended_applications/abalone_log4.csv",
+      "columns": [
+        "Length",
+        "Diameter",
+        "Height",
+        "ShuckedWeight"
+      ],
+      "transform": "log",
+      "conditional_target": "ShuckedWeight",
+      "k": 3,
+      "methods": [
+        "shared_ld",
+        "full_ld",
+        "gaussian_shared_correlation",
+        "gaussian_full",
+        "gaussian_diag",
+        "fmvmm_t",
+        "bounded_skew_normal"
+      ],
+      "expected_rows": 4175,
+      "expected_groups": 4175,
+      "group_role": "Unique original specimen row; no site/batch identifier is available",
+      "label_role": "Recorded M/F/I sex/maturity category; not used in likelihood fitting or initialization",
+      "scientific_target": "Shucked meat mass conditional on three shell dimensions",
+      "score_measure": "Original published scaled measurement coordinates, with exact log-transform Jacobians",
+      "units": "Published continuous values divided by 200; retain these stored units consistently",
+      "excluded_original_one_based_rows": [
+        1258,
+        3997
+      ]
+    }
+  ],
+  "expected_counts": {
+    "prediction_tasks": 198,
+    "bootstrap_tasks": 597,
+    "total_tasks": 795,
+    "prediction_reported_mixture_fits": 1395,
+    "bootstrap_reported_mixture_fits": 1791,
+    "conditional_baseline_fits": 750,
+    "additional_diagonal_dependencies": 627
+  }
+}

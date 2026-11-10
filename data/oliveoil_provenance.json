@@ -1,0 +1,30 @@
+{
+  "coordinates": [
+    "log(palmitic/oleic)",
+    "log(linoleic/oleic)"
+  ],
+  "csv_sha256": "086a6de5b2d4d9bde61367cd46298cfe928f01a3d0fb71d1768e5304f122f822",
+  "density_comparison": "DMM is fitted to the actual three-part composition using its original ALR coordinates. All held-out log densities are compared in original ALR measure. Standardizing ALR before a DMM fit changes its family and is not used here.",
+  "documentation_url": "https://search.r-project.org/CRAN/refmans/pdfCluster/html/oliveoil.html",
+  "full_data_caution": "Some other acids have instrument-limit zeros; they are retained in the raw table but not analysed. No pseudocount is added.",
+  "labels": "macro.area is held out from fitting and starts; k=3 fixed from the documented three macro-areas; labels used only for external ARI.",
+  "minimum_primary_measurements": {
+    "linoleic": 448.0,
+    "oleic": 6300.0,
+    "palmitic": 610.0
+  },
+  "primary_features": [
+    "palmitic",
+    "linoleic",
+    "oleic"
+  ],
+  "raw_sha256": "1a3f94224a24023865ab6a0fc283154b99949e782fab39d0bdedc01655774669",
+  "reference": "oleic",
+  "reference_sensitivity": "Diagonal location-scale LD with different coordinate scales is not generally invariant to changing the ALR reference. Do not choose the reference by held-out performance.",
+  "rows": 572,
+  "scientific_selection_source": "https://www.aocs.org/resource/individual-commodity-oils-and-fats/",
+  "selection_reason": "Three major fatty acids selected from chemical context before fitting any models. Oleic is the major constituent and fixed reference. This is a three-part subcomposition, not the full eight-acid composition.",
+  "source_citation": "Forina et al. (2008), V-PARVUS, as credited by pdfCluster; see also Forina et al. (1983), Classification of olive oils from their fatty acid composition.",
+  "source_url": "https://raw.githubusercontent.com/cran/pdfCluster/master/data/oliveoil.rda",
+  "zeros_in_primary_features": 0
+}
