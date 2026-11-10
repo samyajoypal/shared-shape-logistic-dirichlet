@@ -111,3 +111,51 @@ flags and source/configuration hashes make such differences inspectable.
 Use the same scientific settings for a reproduction and a new output
 directory for a changed design. Do not replace unfavorable seeds, models,
 datasets or failed attempts based on their outcomes.
+
+Complete saved numerical reporting
+---------------------------------
+
+For the quick path, without model fitting or downloads, run from the
+repository root::
+
+    .venv/bin/python scripts/reproduce_saved_tables.py --output artifacts/saved_tables
+
+Use a new output directory. The 23 CSV outputs comprise the twelve existing
+tables, five complete interval tables, and six complete primary-simulation
+and conditional-risk-subset tables. Every supplied numeric input is checked
+against ``export_manifest.json`` before reporting. The twelve existing CSV
+outputs are also covered by byte-preservation regression tests.
+
+The additional reports alone can be generated with::
+
+    .venv/bin/python scripts/complete_saved_reporting.py --output artifacts/complete_reports
+
+This command writes ``complete_intervals/``, ``complete_simulations/`` and a
+manifest recording relative input/output hashes. Interval tables are
+recalculated from 54,000 saved method-by-target records and 4,500 outer
+diagnostics. The simulation tables are checked saved summaries covering
+all 65 settings, eight comparators and nine fitted methods. Recomputing
+their estimates from fitted parameters instead requires the full simulation
+runs described earlier in this document; no such fit is performed by either reporting command.
+
+The numeric interval module can also summarize the supplied extracted
+records directly::
+
+    .venv/bin/python scripts/interval_reporting.py --raw saved_summaries/interval_records --output artifacts/interval_report
+
+For a separately generated complete study, ``--frozen DIRECTORY`` selects
+the location of ``aggregate.json`` and ``production_configuration.json``;
+otherwise those two files are read from ``--raw``. The module verifies all
+4,500 task identities, all 108 setting/target/method rows and 81 paired
+comparisons against the aggregate. Its record schema and thresholds are
+the fixed nine-setting design supplied here. The top-level quick command
+additionally verifies that the supplied record bytes match the public
+export hashes.
+
+The interval MCSE uses independent outer samples. Bootstrap-draw counts are
+descriptive within-sample totals. Conditional coverage and length use
+available intervals; each paired difference uses the same available outer
+samples. Undefined results remain missing when no interval is available.
+Exact binomial Monte Carlo intervals remain nondegenerate when a plug-in
+MCSE is zero. No complete bootstrap-fit bundles are needed for these
+reporting commands, and none are included.

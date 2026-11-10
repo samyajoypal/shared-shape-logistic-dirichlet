@@ -9,6 +9,7 @@ import hashlib
 import json
 import numpy as np
 import pandas as pd
+import complete_saved_reporting
 ROOT=Path(__file__).resolve().parents[1]
 CORE=['shared_ld','full_ld','gaussian_shared_correlation']
 METHODS=CORE+['conditional_log_linear']
@@ -88,7 +89,9 @@ def build(output):
     abalone={key:abalone[key] for key in oil if key!='label'}
     abalone['label']='Abalone'
     t['focused_table_02_applications']=pd.DataFrame([oil,abalone],columns=list(oil))
-    outputs={}
+    complete=complete_saved_reporting.build(ROOT,output)
+    used.update(complete['input_sha256'])
+    outputs=dict(complete['output_sha256'])
     for name,frame in t.items():
         path=output/(name+'.csv');frame.to_csv(path,index=False);outputs[path.name]=sha(path)
     for name,rel in [('all_interval_results','intervals/inference_coverage_derived.csv'),('all_conditional_risks','conditional_risk/all_cell_paired_risks.csv'),('all_additional_sensitivities','additional_density/matched_sensitivity_changes.csv')]:
@@ -96,6 +99,7 @@ def build(output):
     plan={'input_sha256':used,'output_sha256':outputs,'source_sha256':sha(__file__),
           'focused_display_files':['table_01_core_simulations.csv','focused_table_02_applications.csv'],
           'extended_comparison_files':[name+'.csv' for name in t if name not in {'table_01_core_simulations','focused_table_02_applications'}],
+          'complete_report_files':list(complete['output_sha256']),
           'new_fits':False,'data_downloads':False,'summary_reproduction_only':True}
     (output/'reproduction_manifest.json').write_text(json.dumps(plan,indent=2)+'\n');return plan
 

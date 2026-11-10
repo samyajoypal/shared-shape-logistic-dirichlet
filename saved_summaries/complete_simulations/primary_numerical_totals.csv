@@ -1,0 +1,10 @@
+method,planned,recorded,missing,fit_available,evaluation_available,unavailable,failed_recorded,score_checked,score_passed,score_failed,score_unknown,boundary_checked,boundary_hits,boundary_unknown
+shared_ld,10500,10500,0,10500,10500,0,0,10500,10056,444,0,10500,1027,0
+full_ld,10500,10500,0,10500,10500,0,0,10500,9371,1129,0,10500,1725,0
+gaussian_shared_correlation,10500,10500,0,10500,10500,0,0,10500,10500,0,0,10500,311,0
+gaussian_full,10500,10500,0,10500,10500,0,0,0,0,0,10500,10500,18,0
+gaussian_diag,10500,10500,0,10500,10500,0,0,0,0,0,10500,10500,6,0
+fmvmm_t,10500,10500,0,10499,10499,1,1,0,0,0,10500,10499,1472,1
+fmvmm_dmm_native,10500,10500,0,10500,10500,0,0,10500,288,10212,0,0,0,10500
+base_ld_native,10500,10500,0,10500,10500,0,0,10500,10500,0,0,10500,1954,0
+bounded_skew_normal,6500,6500,0,6500,6500,0,0,6500,6243,257,0,6500,4465,0

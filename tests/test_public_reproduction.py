@@ -14,10 +14,9 @@ def isolated_inputs(tmp_path, monkeypatch):
     root.mkdir()
     shutil.copytree(tables.ROOT / "saved_summaries", root / "saved_summaries")
     (root / "configs").mkdir()
-    shutil.copyfile(tables.ROOT / "configs/phase3_applications.json",
-                    root / "configs/phase3_applications.json")
-    shutil.copyfile(tables.ROOT / "configs/phase2_applications.json",
-                    root / "configs/phase2_applications.json")
+    for name in ["phase3_applications.json", "phase2_applications.json",
+                 "phase2_simulations.json", "phase2_gaussian_control.json"]:
+        shutil.copyfile(tables.ROOT / "configs" / name, root / "configs" / name)
     shutil.copyfile(tables.ROOT / "export_manifest.json", root / "export_manifest.json")
     monkeypatch.setattr(tables, "ROOT", root)
     return root
@@ -34,7 +33,7 @@ def test_all_eight_extended_tables_keep_declared_scope(isolated_inputs, tmp_path
     assert receipt["data_downloads"] is False
     assert "configs/phase3_applications.json" in receipt["input_sha256"]
     assert "configs/phase2_applications.json" in receipt["input_sha256"]
-    assert len(receipt["output_sha256"]) == 12
+    assert len(receipt["output_sha256"]) == 23
     for filename, expected in receipt["output_sha256"].items():
         assert tables.sha(output / filename) == expected
 

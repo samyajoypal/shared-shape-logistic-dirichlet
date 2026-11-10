@@ -1,0 +1,10 @@
+cell_id,block,d,k,n_train,heterogeneity,local_h_coefficient,target_index,test_grid_rows,planned,method,subset,available,mean_risk,risk_mcse,unavailable_or_ineligible,recorded,missing_task_records,source_failure_true,source_failure_false,source_failure_unknown,score_true,score_false,score_unknown,boundary_true,boundary_false,boundary_unknown,mean_test_integration_mcse
+core_ld_d6_k3_n250_h0p2,core,6,3,250,0.2,,0,5000,200,shared_ld,all_methods_score_eligible,199,0.041133099557521244,0.0011250569680552023,1,200,0,0,200,0,200,0,0,0,200,0,0.002074965116563216
+core_ld_d6_k3_n250_h0p2,core,6,3,250,0.2,,0,5000,200,full_ld,all_methods_score_eligible,199,0.04143910138052354,0.0010590575140805407,1,200,0,0,200,0,199,1,0,1,199,0,0.0018227038661729367
+core_ld_d6_k3_n250_h0p2,core,6,3,250,0.2,,0,5000,200,gaussian_shared_correlation,all_methods_score_eligible,199,0.09919528791414765,0.001567109891102365,1,200,0,0,200,0,200,0,0,0,200,0,0.0042238927442869705
+core_ld_d6_k3_n250_h0p5,core,6,3,250,0.5,,0,5000,200,shared_ld,all_methods_score_eligible,199,0.08692358237974925,0.0017816602694382482,1,200,0,0,200,0,200,0,0,0,200,0,0.004324589025835662
+core_ld_d6_k3_n250_h0p5,core,6,3,250,0.5,,0,5000,200,full_ld,all_methods_score_eligible,199,0.0320703821945727,0.0010702412397262044,1,200,0,0,200,0,199,1,0,2,198,0,0.0014739674537394662
+core_ld_d6_k3_n250_h0p5,core,6,3,250,0.5,,0,5000,200,gaussian_shared_correlation,all_methods_score_eligible,199,0.1523974726640139,0.0016717262742600393,1,200,0,0,200,0,200,0,0,1,199,0,0.005787128219799496
+core_ld_d6_k3_n250_h1p0,core,6,3,250,1.0,,0,5000,200,shared_ld,all_methods_score_eligible,192,0.12278895935989638,0.0021428136757725286,8,200,0,0,200,0,200,0,0,0,200,0,0.004668774049002982
+core_ld_d6_k3_n250_h1p0,core,6,3,250,1.0,,0,5000,200,full_ld,all_methods_score_eligible,192,0.022041144150213923,0.0008151550081123984,8,200,0,0,200,0,192,8,0,12,188,0,0.001040753092565899
+core_ld_d6_k3_n250_h1p0,core,6,3,250,1.0,,0,5000,200,gaussian_shared_correlation,all_methods_score_eligible,192,0.21647422626518117,0.0031742529757445535,8,200,0,0,200,0,200,0,0,0,200,0,0.0074942491237818785

@@ -1,34 +1,43 @@
 {
-  "scope": "Independent checks of the standalone public release and its focused table export; no full statistical studies were rerun for this reporting revision.",
+  "scope": "Additive public interval and primary-simulation reporting update; relevant reporting tests and isolated CLI checks were run, with no new model fits. Earlier numerical validation is retained as historical evidence.",
   "isolated_tests": {
     "passed": 356,
     "skipped": 26,
     "reason_for_skips": "Optional downloaded-data or completed-run integration inputs are absent from the minimal release.",
-    "scope": "Numerical and workflow baseline check; the focused reporting changes were checked separately by the seven public-table tests."
+    "scope": "Numerical and workflow baseline check; the focused reporting changes were checked separately by the seven public-table tests.",
+    "rerun_for_this_reporting_update": false
   },
   "additional_public_table_tests": {
-    "passed": 7,
+    "passed": 24,
+    "isolated_copy": true,
+    "scope": "10 pure interval tests,7 complete-report tests,7 existing saved-table tests",
     "checks": [
-      "all eight extended numerical table scopes retained",
-      "focused two-application display retains all four predictors",
-      "modified original and additional application configuration rejection",
-      "modified scientific summary rejection",
-      "incomplete bootstrap pair rejection for both focused applications"
+      "all108 interval rows and81 paired comparisons retained",
+      "conditional versus all-sample coverage denominators",
+      "zero availability and small-sample exact uncertainty",
+      "paired rather than independent-method MCSE",
+      "all65 primary settings,520 paired rows and585 diagnostic rows",
+      "modified numeric bytes and missing manifest hashes rejected",
+      "duplicate setting identities and excessive pair counts rejected",
+      "all12 previous CSV outputs byte-identical",
+      "application summaries and scientific inputs unchanged"
     ]
   },
   "isolated_import_sweep": {
     "scripts_checked": 30,
     "failures": 0,
-    "parent_workspace_fallback": false
+    "parent_workspace_fallback": false,
+    "rerun_for_this_reporting_update": false
   },
   "synthetic_installation_smoke": {
     "procedures_checked": 5,
     "finite_density_procedures": 5,
     "scientific_study": false,
-    "note": "Short-budget package DMM nonconvergence is retained; finite density is the smoke criterion."
+    "note": "Short-budget package DMM nonconvergence is retained; finite density is the smoke criterion.",
+    "rerun_for_this_reporting_update": false
   },
   "saved_summary_reproduction": {
-    "csv_outputs": 12,
+    "csv_outputs": 23,
     "focused_display_files": [
       "table_01_core_simulations.csv",
       "focused_table_02_applications.csv"
@@ -38,14 +47,44 @@
     "focused_application_numerical_mismatches": 0,
     "extended_table_rows_independently_compared": 46,
     "extended_printed_numeric_cells_independently_compared": 171,
-    "existing_csv_outputs_byte_unchanged": 11,
+    "existing_csv_outputs_byte_unchanged": 12,
     "numerical_mismatches": 0,
-    "new_fits": false
+    "new_fits": false,
+    "new_interval_csv_outputs": 5,
+    "new_simulation_csv_outputs": 6,
+    "new_interval_table_row_counts": [
+      108,
+      81,
+      9,
+      9,
+      108
+    ],
+    "new_simulation_table_row_counts": [
+      65,
+      520,
+      585,
+      9,
+      9,
+      6
+    ],
+    "complete_interval_outputs_byte_identical_to_validated_numeric_report": true
   },
   "public_data_download": {
     "isolated_network_download_passed": true,
-    "prepared_csv_files_byte_equal_to_analysis_inputs": 6
+    "prepared_csv_files_byte_equal_to_analysis_inputs": 6,
+    "rerun_for_this_reporting_update": false
   },
   "rights": "No additional license is applied to original research code. Dataset terms are separate; see LICENSES/.",
-  "complete_fit_checkpoints_bundled": false
+  "complete_fit_checkpoints_bundled": false,
+  "reporting_import_check": {
+    "scripts_checked": 3,
+    "failures": 0,
+    "isolated_copy": true,
+    "parent_workspace_fallback": false
+  },
+  "protected_preexisting_files": {
+    "checked": 134,
+    "modified": 0,
+    "scope": "All preexisting files except the explicitly changed reporting entrypoint/tests, README/docs, and release manifests; includes every application source, input and saved summary"
+  }
 }

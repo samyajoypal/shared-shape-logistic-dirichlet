@@ -37,12 +37,36 @@ Run::
 
     .venv/bin/python scripts/reproduce_saved_tables.py --output artifacts/saved_tables
 
-The command verifies the input hashes, writes twelve CSV files and a
+The command verifies the input hashes, writes 23 CSV files and a
 reproduction manifest. These include the two focused displays, the extended
 comparison tables, and complete interval, conditional-risk and sensitivity
 summaries.
 Choose a new output directory to run it again. It never overwrites an
 existing output directory or selects new model fits.
+
+The twelve previously supplied CSV outputs retain their names and exact
+contents. Eleven complete-report outputs are added in two subdirectories:
+
+* ``complete_intervals/`` contains five tables: all 108 interval summaries,
+  81 comparisons with Wald on the same available samples, nine outer-fit
+  diagnostic rows, nine bootstrap diagnostic rows, and 108 exclusion rows.
+  These are recomputed from the supplied 54,000 interval records and 4,500
+  outer diagnostic records. They include availability, conditional coverage,
+  available-and-cover frequency, interval lengths, Monte Carlo uncertainty
+  and numerical eligibility counts.
+* ``complete_simulations/`` contains all 65 primary settings, 520 paired
+  performance rows, 585 numerical diagnostic rows, nine method totals, and
+  the nine method/six pair rows whose conditional-risk estimates change on
+  the common score-eligible subset. These are verified saved estimates;
+  raw fitted checkpoints are not bundled. Counts and settings are checked
+  against the supplied configurations, and the subset comparisons are
+  checked against the existing full conditional-risk table.
+
+The simulation performance differences are shared-shape LD minus the named
+comparator. Squared-error means were computed by squaring each replicate's
+RMSE before averaging, not by squaring an average RMSE. The complete tables
+retain the unavailable Student-t result and all numerical flags. They add
+reporting detail without changing any application result or fitting rule.
 
 The focused outputs are:
 

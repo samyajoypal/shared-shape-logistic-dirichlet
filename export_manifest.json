@@ -739,6 +739,107 @@
       "export_transformations": [],
       "file": "saved_summaries/additional_stability/stability_summary.csv",
       "original_sha256": "d9897d3fab5e6340bbaf34fd6b34bf8efc6790de7c0003ab46f105f9e15775f9"
+    },
+    {
+      "file": "scripts/interval_reporting.py",
+      "original_sha256": "2a82a85ecaeb6c3a923a9bfb6e9883f630a7d3f7ca95d388fc464c1e27f00081",
+      "export_sha256": "2a82a85ecaeb6c3a923a9bfb6e9883f630a7d3f7ca95d388fc464c1e27f00081",
+      "export_transformations": []
+    },
+    {
+      "file": "tests/test_interval_reporting.py",
+      "original_sha256": "8b2fb38ca8d3a9025effa92598d3ea4337faa8209dab7d5a2aaaa24778b23fba",
+      "export_sha256": "8b2fb38ca8d3a9025effa92598d3ea4337faa8209dab7d5a2aaaa24778b23fba",
+      "export_transformations": []
+    },
+    {
+      "file": "saved_summaries/interval_records/inference_task_intervals.csv.gz",
+      "original_sha256": "8ee11b07099b8141cf8254b6ec68f92a6b2b631cbc389559d1e5274c958da5fb",
+      "export_sha256": "8ee11b07099b8141cf8254b6ec68f92a6b2b631cbc389559d1e5274c958da5fb",
+      "export_transformations": []
+    },
+    {
+      "file": "saved_summaries/interval_records/inference_outer_diagnostics.csv.gz",
+      "original_sha256": "e49713a41f32eaa6939a93baf4eeca74f468b924a9ed14717e039333b70e7391",
+      "export_sha256": "e49713a41f32eaa6939a93baf4eeca74f468b924a9ed14717e039333b70e7391",
+      "export_transformations": []
+    },
+    {
+      "file": "saved_summaries/interval_records/aggregate.json",
+      "original_sha256": "dd671c53216ee92d34d7f4da303b79e5c0bc8659d4afb332f2d4e5d71446a530",
+      "export_sha256": "dd671c53216ee92d34d7f4da303b79e5c0bc8659d4afb332f2d4e5d71446a530",
+      "export_transformations": []
+    },
+    {
+      "file": "saved_summaries/interval_records/production_configuration.json",
+      "original_sha256": "21ba63d9a639ffc6e0a62978705bfd790ed49e0d28c41102002f911c1cdaff7b",
+      "export_sha256": "21ba63d9a639ffc6e0a62978705bfd790ed49e0d28c41102002f911c1cdaff7b",
+      "export_transformations": []
+    },
+    {
+      "file": "saved_summaries/interval_records/extraction_manifest.json",
+      "original_sha256": "d2bd26c759ac0f127e0ee3db40160b0c62f4c5b68a73b60c9061ea8f75cc6c62",
+      "export_sha256": "8e042105e1e24c799d2cde95df6842f3c5f53231128b7bdc3a1832195fae7010",
+      "export_transformations": [
+        "Removed machine-specific source location; scientific hashes and complete result-hash ledger retained"
+      ]
+    },
+    {
+      "file": "saved_summaries/complete_simulations/settings.csv",
+      "original_sha256": "b285f51177fa0938305f54289f8fa4e295f57d21f851052bae8c5a24718aedd6",
+      "export_sha256": "b285f51177fa0938305f54289f8fa4e295f57d21f851052bae8c5a24718aedd6",
+      "export_transformations": []
+    },
+    {
+      "file": "saved_summaries/complete_simulations/primary_paired_performance.csv",
+      "original_sha256": "252177825874d9101c751534cbfb2b051d47080536462b217f6c9bbdb3d631b3",
+      "export_sha256": "252177825874d9101c751534cbfb2b051d47080536462b217f6c9bbdb3d631b3",
+      "export_transformations": []
+    },
+    {
+      "file": "saved_summaries/complete_simulations/primary_numerical_diagnostics.csv",
+      "original_sha256": "3680202a2713376e2a171608dc9b9381f68a3e4274192b2e75daaa130473b378",
+      "export_sha256": "3680202a2713376e2a171608dc9b9381f68a3e4274192b2e75daaa130473b378",
+      "export_transformations": []
+    },
+    {
+      "file": "saved_summaries/complete_simulations/primary_numerical_totals.csv",
+      "original_sha256": "7d2e78d04b912d97dc707db03f298b496d0cc28fc869992b0e955398178436e9",
+      "export_sha256": "7d2e78d04b912d97dc707db03f298b496d0cc28fc869992b0e955398178436e9",
+      "export_transformations": []
+    },
+    {
+      "file": "saved_summaries/complete_simulations/conditional_risk_changed_methods.csv",
+      "original_sha256": "298bf97c9a2af096aaaf52914cf5bdb9129c84b9ae7df3a115f909922a65299b",
+      "export_sha256": "298bf97c9a2af096aaaf52914cf5bdb9129c84b9ae7df3a115f909922a65299b",
+      "export_transformations": []
+    },
+    {
+      "file": "saved_summaries/complete_simulations/conditional_risk_changed_pairs.csv",
+      "original_sha256": "51a84da79c904b94201cc32dd47e52cb3e86203b0f48bd70af48dc043c80d6c2",
+      "export_sha256": "51a84da79c904b94201cc32dd47e52cb3e86203b0f48bd70af48dc043c80d6c2",
+      "export_transformations": []
+    },
+    {
+      "file": "scripts/complete_saved_reporting.py",
+      "original_sha256": "76f5e1f1532ded8ec0082c782d95175a53b8c04f9fc751457cd5fd3ff392bd93",
+      "export_sha256": "76f5e1f1532ded8ec0082c782d95175a53b8c04f9fc751457cd5fd3ff392bd93",
+      "export_transformations": [],
+      "origin": "Public reporting implementation or regression input"
+    },
+    {
+      "file": "configs/previous_saved_csv_sha256.json",
+      "original_sha256": "f3c68543282c69a75a98104059cab8dcc18732c3954d55e3d3cf2b7cfd9f7fb8",
+      "export_sha256": "f3c68543282c69a75a98104059cab8dcc18732c3954d55e3d3cf2b7cfd9f7fb8",
+      "export_transformations": [],
+      "origin": "Public reporting implementation or regression input"
+    },
+    {
+      "file": "tests/test_complete_saved_reporting.py",
+      "original_sha256": "8fbfd1807ff92d847258457e17912924de43de8cfb0db4fccc1cbeba787b5c95",
+      "export_sha256": "8fbfd1807ff92d847258457e17912924de43de8cfb0db4fccc1cbeba787b5c95",
+      "export_transformations": [],
+      "origin": "Public reporting implementation or regression input"
     }
   ],
   "historical_sources_unchanged": true,

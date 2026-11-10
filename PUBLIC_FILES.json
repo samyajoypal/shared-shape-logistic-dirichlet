@@ -24,13 +24,13 @@
     },
     {
       "file": "README.rst",
-      "bytes": 6855,
-      "sha256": "0d87e2fc3264ff47f1749cab9df726cfc8b4dd4e0da784dad197030d4309cfae"
+      "bytes": 8360,
+      "sha256": "34595f9f4bb607f787990c9ec3a04a90524c882d557226d1f401ec491a9df57e"
     },
     {
       "file": "VALIDATION.json",
-      "bytes": 2127,
-      "sha256": "a6bb4c1f716289bee208a59c0efcf27fc27ef3051285ccb60350e438efcc11a5"
+      "bytes": 3502,
+      "sha256": "6873523a5e17ff90be3e1d46c59e5d5a58cc7b6eb23b6d9070e47959fb64a3dc"
     },
     {
       "file": "configs/experiments.json",
@@ -71,6 +71,11 @@
       "file": "configs/phase3_applications.json",
       "bytes": 6760,
       "sha256": "901bdf5802409c1bbb7e7d73b1afd23c59fb6729740c35f4497a319cc5489fb5"
+    },
+    {
+      "file": "configs/previous_saved_csv_sha256.json",
+      "bytes": 1279,
+      "sha256": "f3c68543282c69a75a98104059cab8dcc18732c3954d55e3d3cf2b7cfd9f7fb8"
     },
     {
       "file": "configs/simulation_conditional_mean_risk.json",
@@ -139,8 +144,8 @@
     },
     {
       "file": "docs/RUNNING.rst",
-      "bytes": 7985,
-      "sha256": "2da15873af884f1747af22778d0cca8da773fed645723036972fc7fe204cec60"
+      "bytes": 10501,
+      "sha256": "bb03e29a4dcb722434b973ae091d965834d3694b37f12197f8b7d60a971b7c0b"
     },
     {
       "file": "docs/public_analysis_receipt.json",
@@ -154,8 +159,8 @@
     },
     {
       "file": "export_manifest.json",
-      "bytes": 36414,
-      "sha256": "71e4b14e3dc966c62f85c40732423fc58e5793dd47b2ec5b97ae5603382f9cd0"
+      "bytes": 41609,
+      "sha256": "f5bde67666691fac1e86cb3dd5c6e548651b7276b28a4bf4b35b4fca83c362f2"
     },
     {
       "file": "pyproject.toml",
@@ -238,6 +243,36 @@
       "sha256": "d9897d3fab5e6340bbaf34fd6b34bf8efc6790de7c0003ab46f105f9e15775f9"
     },
     {
+      "file": "saved_summaries/complete_simulations/conditional_risk_changed_methods.csv",
+      "bytes": 2123,
+      "sha256": "298bf97c9a2af096aaaf52914cf5bdb9129c84b9ae7df3a115f909922a65299b"
+    },
+    {
+      "file": "saved_summaries/complete_simulations/conditional_risk_changed_pairs.csv",
+      "bytes": 2241,
+      "sha256": "51a84da79c904b94201cc32dd47e52cb3e86203b0f48bd70af48dc043c80d6c2"
+    },
+    {
+      "file": "saved_summaries/complete_simulations/primary_numerical_diagnostics.csv",
+      "bytes": 53995,
+      "sha256": "3680202a2713376e2a171608dc9b9381f68a3e4274192b2e75daaa130473b378"
+    },
+    {
+      "file": "saved_summaries/complete_simulations/primary_numerical_totals.csv",
+      "bytes": 842,
+      "sha256": "7d2e78d04b912d97dc707db03f298b496d0cc28fc869992b0e955398178436e9"
+    },
+    {
+      "file": "saved_summaries/complete_simulations/primary_paired_performance.csv",
+      "bytes": 149814,
+      "sha256": "252177825874d9101c751534cbfb2b051d47080536462b217f6c9bbdb3d631b3"
+    },
+    {
+      "file": "saved_summaries/complete_simulations/settings.csv",
+      "bytes": 5675,
+      "sha256": "b285f51177fa0938305f54289f8fa4e295f57d21f851052bae8c5a24718aedd6"
+    },
+    {
       "file": "saved_summaries/conditional_risk/all_cell_method_risks.csv",
       "bytes": 35202,
       "sha256": "4cb353cb6f5d68ffc000a96c0e7e19dbed42b7fd12c90e8b9ce2fa53031a1a51"
@@ -251,6 +286,31 @@
       "file": "saved_summaries/conditional_risk/assessment_compact_all_cells.csv",
       "bytes": 23398,
       "sha256": "49f491285077c3d64ee6bda1c3b3f219577df09309afc6a3bfec390d394927cf"
+    },
+    {
+      "file": "saved_summaries/interval_records/aggregate.json",
+      "bytes": 87080,
+      "sha256": "dd671c53216ee92d34d7f4da303b79e5c0bc8659d4afb332f2d4e5d71446a530"
+    },
+    {
+      "file": "saved_summaries/interval_records/extraction_manifest.json",
+      "bytes": 359642,
+      "sha256": "8e042105e1e24c799d2cde95df6842f3c5f53231128b7bdc3a1832195fae7010"
+    },
+    {
+      "file": "saved_summaries/interval_records/inference_outer_diagnostics.csv.gz",
+      "bytes": 168325,
+      "sha256": "e49713a41f32eaa6939a93baf4eeca74f468b924a9ed14717e039333b70e7391"
+    },
+    {
+      "file": "saved_summaries/interval_records/inference_task_intervals.csv.gz",
+      "bytes": 1805970,
+      "sha256": "8ee11b07099b8141cf8254b6ec68f92a6b2b631cbc389559d1e5274c958da5fb"
+    },
+    {
+      "file": "saved_summaries/interval_records/production_configuration.json",
+      "bytes": 2280,
+      "sha256": "21ba63d9a639ffc6e0a62978705bfd790ed49e0d28c41102002f911c1cdaff7b"
     },
     {
       "file": "saved_summaries/intervals/inference_coverage_derived.csv",
@@ -448,6 +508,11 @@
       "sha256": "1bb2ff374aba8469b07670601384a5a5c6544e98c720c97a173aec8d11b7abb8"
     },
     {
+      "file": "scripts/complete_saved_reporting.py",
+      "bytes": 10174,
+      "sha256": "76f5e1f1532ded8ec0082c782d95175a53b8c04f9fc751457cd5fd3ff392bd93"
+    },
+    {
       "file": "scripts/conditional_log_linear.py",
       "bytes": 6672,
       "sha256": "8e483860228c3744495d4ad746f865d2b56ae3b572f847db54fe67926d40c1c0"
@@ -461,6 +526,11 @@
       "file": "scripts/gaussian_shared_correlation.py",
       "bytes": 23295,
       "sha256": "09b9350f21d4616a809930759d991fae3cfb21bd7762277c5c54c346494dacf8"
+    },
+    {
+      "file": "scripts/interval_reporting.py",
+      "bytes": 18669,
+      "sha256": "2a82a85ecaeb6c3a923a9bfb6e9883f630a7d3f7ca95d388fc464c1e27f00081"
     },
     {
       "file": "scripts/ld_information.py",
@@ -544,8 +614,8 @@
     },
     {
       "file": "scripts/reproduce_saved_tables.py",
-      "bytes": 8200,
-      "sha256": "0f306ce05a09dcfee0d82f2be4d4dc135068f8cb934901a331abd941eba98851"
+      "bytes": 8427,
+      "sha256": "961f05d5c9481e7d3f5efda9823c495e007c74af15cb754f82aecb7ed7d91ed0"
     },
     {
       "file": "scripts/run_confirmatory_experiments.py",
@@ -613,6 +683,11 @@
       "sha256": "344921ddc1d34e6005aaa5d6ddbe7f6e236284644ad8827b18360f4ffbda1eb1"
     },
     {
+      "file": "tests/test_complete_saved_reporting.py",
+      "bytes": 3538,
+      "sha256": "8fbfd1807ff92d847258457e17912924de43de8cfb0db4fccc1cbeba787b5c95"
+    },
+    {
       "file": "tests/test_conditional_log_linear.py",
       "bytes": 3809,
       "sha256": "95031c591d832744daec046452b22adffe8196093579b0350d2539fe22e9d849"
@@ -626,6 +701,11 @@
       "file": "tests/test_gaussian_shared_correlation.py",
       "bytes": 11782,
       "sha256": "439966f0b17a7a3f5d61ff18487f8b8626f8f3ecded230e5c5e98676c344cf1f"
+    },
+    {
+      "file": "tests/test_interval_reporting.py",
+      "bytes": 5109,
+      "sha256": "8b2fb38ca8d3a9025effa92598d3ea4337faa8209dab7d5a2aaaa24778b23fba"
     },
     {
       "file": "tests/test_likelihood.py",
@@ -684,8 +764,8 @@
     },
     {
       "file": "tests/test_public_reproduction.py",
-      "bytes": 5026,
-      "sha256": "56d5cabe9f02a0e8966b4d22610743310e1ad7bce6a8418006816b5078db787e"
+      "bytes": 4991,
+      "sha256": "a8e11867be7fe4997e42fafe02ef454bd317ddfcd10c5a3e51d2e514337729c1"
     },
     {
       "file": "tests/test_regularized_skew_normal.py",
